@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>格式转换工具</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="upload-area" id="upload-area">
+            <h2>点击选择文件或拖拽区域</h2>
+            <p>支持批量处理</p>
+            <input type="file" id="fileInput" multiple>
+        </div>
+
+        <div class="format-select">
+            <label for="format">选择转换格式：</label>
+            <select id="format">
+                <option value="png">PNG</option>
+                <option value="jpg">JPG</option>
+                <option value="gif">GIF</option>
+                <option value="mp4">MP4</option>
+                <option value="avi">AVI</option>
+            </select>
+        </div>
+
+        <div class="file-list">
+            <div class="left">
+                <h3>显示即将转换的内容列表</h3>
+                <ul id="pending-list"></ul>
+            </div>
+            <div class="right">
+                <h3>显示转换完成的内容列表</h3>
+                <ul id="converted-list"></ul>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <button id="convertBtn">转换</button>
+            <button id="saveBtn">保存</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
